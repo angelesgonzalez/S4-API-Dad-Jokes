@@ -1,2 +1,5 @@
-const text: string = "Hello TypeScript";
-console.log(text);
+import { getJoke } from "./services/api";
+
+console.log(getJoke())
+console.log(getJoke());
+
