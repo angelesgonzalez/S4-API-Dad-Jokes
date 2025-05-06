@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+.score-container_form {
+    direction: rtl;
+    font-size: 30px;
+    user-select: none;
+
+}
+
+.score-container_form input[type="radio"] {
+    display: none;
+}
+
+.score-container_form label {
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.score-container_form label:hover,
+.score-container_form label:hover~label {
+    color: #f2b600;
+}
+
+.score-container_form  
+input[type="radio"]:checked~label {
+    color: #f2b600;
+}
