@@ -1,5 +1,7 @@
 import { getJoke } from "./services/api";
 
-console.log(getJoke())
-console.log(getJoke());
 
+
+let jokeDisplayText = document.getElementsByClassName("joke-display__text");
+
+console.log('jokeDisplayText');
