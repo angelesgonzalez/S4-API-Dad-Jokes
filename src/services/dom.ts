@@ -11,3 +11,6 @@ export let showJoke = async () => {
 		updateHTML("joke-display__text", `${joke}`);
 	}
 };
+
+export const nextJokeButton = document.getElementById("joke-display__button"); 
+
