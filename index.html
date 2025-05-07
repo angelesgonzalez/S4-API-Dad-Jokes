@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="src/output.css" rel="stylesheet">
+
 </head>
 
 <body class="h-screen flex items-center justify-center">
@@ -13,26 +14,50 @@
     <div class="mx-auto p-9">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-96">
 
-            <!-- left column - row 1 -->
-            <div class="md:col-span-2 md:row-span-2 bg-lime-300 rounded-lg p-5 flex items-center">
+            <!-- Joke Container -->
+            <div
+                class="md:col-span-2 md:row-span-2 bg-lime-300 rounded-lg p-5 flex flex-col items-center justify-center group">
                 <p class="text-2xl font-medium" id="joke-display__text">
                 </p>
+
+                <div id="score-container" class="invisible group-hover:visible">
+                    <form class="score-container_form" id="scoring-form">
+                        <input type="radio" id="score1" name="score" value="3" class="tab-score" />
+                        <label for="score1">★</label>
+
+                        <input type="radio" id="score2" name="score" value="2" class="tab-score" />
+                        <label for="score2">★</label>
+
+                        <input type="radio" id="score3" name="score" value="1" class="tab-score" />
+                        <label for="score3">★</label>
+                    </form>
+
+                </div>
+
+
+
+
+
+
+
+
             </div>
-            <!-- right column  - row 1 -->
+
+
+            <!-- Meme Container -->
             <div class="md:col-span-2 md:row-span-2 bg-purple-200 rounded-lg p-3 h-full">
                 <p class="text-purple-900 font-medium mb-2">Meme of the day</p>
-              <img src="/src/assets/placeholder.jpg" class="rounded-lg w-fit">
+                <img src="/src/assets/placeholder.jpg" class="rounded-lg w-full">
 
-              
             </div>
 
-            <!-- right column  - row 2 -->
+            <!-- Weather container -->
 
             <div class="md:col-span-3 md:row-span-1 bg-purple-200 rounded-lg p-3">
                 <p class="text-purple-900 font-medium">Today's weather</p>
             </div>
 
-            <!-- left column  - row 2 -->
+            <!-- Next Joke container -->
 
             <div class="md:col-span-1 md:row-span-1 bg-lime-300 rounded-lg p-3 flex items-center justify-center ">
                 <button class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
