@@ -1,3 +1,6 @@
+import { ApiError } from "./Error";
+import { errors } from "./errorLog";
+
 const OPTIONS = {
 	method: "GET",
 	headers: {
@@ -12,12 +15,19 @@ export async function getJoke() {
 		let response = await fetch(URLAPI, OPTIONS);
 
 		if (response.status !== 200) {
-			throw new Error(`There was an error: ${response.status}`);
+			throw new ApiError(
+				"Failed to fetch joke",
+				"FETCH_ERROR",
+				response.status
+			);
 		}
 
 		let data = await response.json();
+		console.log(data);
 		return data.joke;
 	} catch (error) {
-		console.log(error);
+		if (error instanceof ApiError) {
+			errors.push(error);
+		}
 	}
 }

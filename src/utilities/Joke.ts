@@ -12,7 +12,7 @@ export class Joke {
 		this._score = 0;
 	}
 
-	//getters
+
 	get id() {
 		return this._id;
 	}
@@ -24,7 +24,7 @@ export class Joke {
 		return this._date.toISOString();
     }
     
-	//setters
+
 
 	set score(newScore: number) {
 		this._score = newScore;
