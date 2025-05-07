@@ -23,7 +23,6 @@ export async function getJoke() {
 		}
 
 		let data = await response.json();
-		console.log(data);
 		return data.joke;
 	} catch (error) {
 		if (error instanceof ApiError) {
