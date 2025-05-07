@@ -1,1 +1,2 @@
-export declare let reportJokes: {}[];
+import { Joke } from "./Joke";
+export declare let reportJokes: Joke[];

@@ -15,23 +15,24 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-96">
 
             <!-- Joke Container -->
-            <div class="md:col-span-2 md:row-span-2 bg-lime-300 rounded-lg p-5 flex flex-col items-center justify-center group">
+            <div
+                class="md:col-span-2 md:row-span-2 bg-lime-300 rounded-lg p-5 flex flex-col items-center justify-center group">
                 <p class="text-2xl font-medium" id="joke-display__text">
                 </p>
 
-            <div id="score-container" class="invisible group-hover:visible">
-                <form class="score-container_form" id="scoring-form">
-                    <input type="radio" id="score1" name="score" value="1" />
-                    <label for="score1">★</label>
-            
-                    <input type="radio" id="score2" name="score" value="2" />
-                    <label for="score2">★</label>
-            
-                    <input type="radio" id="score3" name="score" value="3" />
-                    <label for="score3">★</label>
-                </form>
-            
-            </div>
+                <div id="score-container" class="invisible group-hover:visible">
+                    <form class="score-container_form" id="scoring-form">
+                        <input type="radio" id="score1" name="score" value="3" class="tab-score" />
+                        <label for="score1">★</label>
+
+                        <input type="radio" id="score2" name="score" value="2" class="tab-score" />
+                        <label for="score2">★</label>
+
+                        <input type="radio" id="score3" name="score" value="1" class="tab-score" />
+                        <label for="score3">★</label>
+                    </form>
+
+                </div>
 
 
 

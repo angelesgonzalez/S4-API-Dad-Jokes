@@ -17,9 +17,12 @@ export let showJoke = async () => {
 
 export const nextJokeButton = document.getElementById("joke-display__button");
 
-/* 
+export const radioButtons = document.querySelectorAll(".tab-score");
+
+export const currentJoke = document.getElementById("joke-display__text");
 
 
-
-
-*/
+export const clearAllInput = () => {
+	let allInputs = document.querySelectorAll("input");
+	allInputs.forEach((singleInput) => (singleInput.value = ""));
+};
