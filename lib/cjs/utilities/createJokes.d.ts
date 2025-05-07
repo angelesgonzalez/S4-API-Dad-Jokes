@@ -1,1 +1,2 @@
-export declare let createJoke: () => Promise<string>;
+import { Joke } from "./Joke";
+export declare let createJoke: () => Promise<Joke>;
