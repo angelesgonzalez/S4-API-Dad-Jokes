@@ -1,1 +1,3 @@
-export let errors = [{}];
+import { ApiError } from "./Error";
+
+export let errors: ApiError[] = [];
