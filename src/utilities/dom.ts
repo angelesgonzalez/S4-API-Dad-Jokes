@@ -1,5 +1,6 @@
 import { createJoke } from "./createJokes";
 import { fetchWeatherData } from "./apis/weatherApi";
+import { getRandomMeme } from "./getRandomMeme";
 
 export let updateHTML = (id: string, update: string, jokeId: number) => {
 	const htmlElement = document.getElementById(id);
@@ -27,8 +28,20 @@ export const clearAllInput = () => {
 	allInputs.forEach((singleInput) => (singleInput.value = ""));
 };
 
-export const showWeather = async () => {
+export let showWeather = async () => {
 	const weather = await fetchWeatherData();
 	console.log(weather);
-	
+
+	/// sacar la data, postearla en el dom
+	// dependiendo de lo que sea, elegir un background que cambia
+};
+
+export let showRandomMeme = () => {
+	const memeContainer = document.getElementById(
+		"memeOftheDay"
+	) as HTMLImageElement | null;
+	const randomMemeUrl = getRandomMeme();
+	if (memeContainer) {
+		memeContainer.src = randomMemeUrl;
+	}
 };
