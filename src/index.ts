@@ -1,12 +1,11 @@
-import { nextJokeButton, showJoke, clearAllInput } from "./utilities/dom";
+import { nextJokeButton, showJoke, clearAllInput, showWeather } from "./utilities/dom";
 import { scoreJoke } from "./utilities/scoreJokes";
 import { errors } from "./utilities/errorLog";
-import { getWeather } from "./utilities/apis/weatherApi";
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", async () => {
+	showWeather();
 	showJoke();
 	scoreJoke();
-	getWeather(52.52, 13.41, "Europe/Berlin");
 });
 
 nextJokeButton.addEventListener("click", (event) => {

@@ -1,4 +1,5 @@
 import { createJoke } from "./createJokes";
+import { fetchWeatherData } from "./apis/weatherApi";
 
 export let updateHTML = (id: string, update: string, jokeId: number) => {
 	const htmlElement = document.getElementById(id);
@@ -21,8 +22,13 @@ export const radioButtons = document.querySelectorAll(".tab-score");
 
 export const currentJoke = document.getElementById("joke-display__text");
 
-
 export const clearAllInput = () => {
 	let allInputs = document.querySelectorAll("input");
 	allInputs.forEach((singleInput) => (singleInput.value = ""));
+};
+
+export const showWeather = async () => {
+	const weather = await fetchWeatherData();
+	console.log(weather);
+	
 };

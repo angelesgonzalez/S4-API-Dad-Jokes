@@ -1,8 +1,16 @@
 export declare let getWeather: (lat: number, lo: number, timezone: string) => Promise<{
-    temperature: any;
-    rain: any;
-    feelsLike: any;
+    temperature: number;
+    rain: number;
+    feelsLike: number;
     isDay: any;
-    windSpeed: any;
+    windSpeed: number;
+    weatherCode: any;
+}>;
+export declare const fetchWeatherData: () => Promise<{
+    temperature: number;
+    rain: number;
+    feelsLike: number;
+    isDay: any;
+    windSpeed: number;
     weatherCode: any;
 }>;

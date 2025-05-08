@@ -4,3 +4,4 @@ export declare const nextJokeButton: HTMLElement;
 export declare const radioButtons: NodeListOf<Element>;
 export declare const currentJoke: HTMLElement;
 export declare const clearAllInput: () => void;
+export declare const showWeather: () => Promise<void>;
