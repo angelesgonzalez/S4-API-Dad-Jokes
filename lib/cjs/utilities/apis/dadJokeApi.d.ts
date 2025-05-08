@@ -1,1 +1,1 @@
-export declare function getJoke(): Promise<any>;
+export declare function getDadJoke(): Promise<any>;

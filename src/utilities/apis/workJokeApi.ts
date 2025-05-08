@@ -8,9 +8,9 @@ const OPTIONS = {
 	},
 };
 
-const URLAPI = "https://icanhazdadjoke.com/";
+const URLAPI = "https://sv443.net/jokeapi/v2/joke/Programming";
 
-export async function getDadJoke() {
+export async function getWorkJoke() {
 	try {
 		let response = await fetch(URLAPI, OPTIONS);
 

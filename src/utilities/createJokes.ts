@@ -1,12 +1,16 @@
 import { Joke } from "./Joke";
 import { reportJokes } from "./reportJokes";
-import { getJoke } from "./apis/dadJokeApi";
+import { getDadJoke } from "./apis/dadJokeApi";
+import { getWorkJoke } from "./apis/workJokeApi";
 
 export let createJoke = async () => {
-	let joke = await getJoke();
+	const randomNumber = Math.random();
+
+	let joke = randomNumber < 0.5 ? await getDadJoke() : await getWorkJoke();
 	if (joke) {
 		const newJoke = new Joke(joke);
 		reportJokes.push(newJoke);
+		console.log(reportJokes);
 		return newJoke;
 	}
 };
