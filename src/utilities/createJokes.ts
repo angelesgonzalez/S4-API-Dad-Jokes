@@ -5,10 +5,12 @@ import { getWorkJoke } from "./apis/workJokeApi";
 
 export let createJoke = async () => {
 	const randomNumber = Math.random();
+	let jokeType = randomNumber < 0.5 ? "Dad Joke" : "Work Joke";
 
 	let joke = randomNumber < 0.5 ? await getDadJoke() : await getWorkJoke();
 	if (joke) {
 		const newJoke = new Joke(joke);
+		newJoke.type = jokeType;
 		reportJokes.push(newJoke);
 		console.log(reportJokes);
 		return newJoke;

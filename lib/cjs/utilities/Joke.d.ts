@@ -4,9 +4,12 @@ export declare class Joke {
     _text: string;
     _date: Date;
     _score: number;
+    _type: string;
     constructor(joke: string);
     get id(): number;
     get text(): string;
     get date(): string;
+    get type(): string;
     set score(newScore: number);
+    set type(newType: string);
 }
