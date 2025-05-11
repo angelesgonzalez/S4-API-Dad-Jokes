@@ -1,6 +1,7 @@
 import { createJoke } from "./createJokes";
 import { fetchWeatherData } from "./apis/weatherApi";
 import { getRandomMeme } from "./getRandomMeme";
+import { chooseWeatherBackground } from "./chooseWeather";
 
 export let updateHTML = (id: string, update: string, jokeId?: number) => {
 	const htmlElement = document.getElementById(id);
@@ -36,30 +37,6 @@ export let showWeather = async () => {
 	updateHTML("weather__rain_p", `${weather.rain}`);
 	updateHTML("weather__wind-speed_p", `${weather.windSpeed}`);
 	chooseWeatherBackground(weather.weatherCode, weather.isDay);
-};
-
-let chooseWeatherBackground = (weatherCode: number, isDay: number) => {
-	const body = document.getElementById("body");
-	if (!body) return;
-
-
-	const existingVideo = document.getElementById("bg-video");
-	if (existingVideo) existingVideo.remove();
-
-
-	const videoName = `${isDay ? "day" : "night"}-${weatherCode}`;
-	console.log(videoName);
-	const videoUrl = `/backgrounds/${videoName}.webm`;
-
-	body.insertAdjacentHTML(
-		"beforeend",
-		`
-		<video autoplay muted loop id="bg-video" class="background-video">
-			<source src="${videoUrl}" type="video/webm">
-			Your browser does not support the video tag.
-		</video>
-	`
-	);
 };
 
 export let showRandomMeme = () => {

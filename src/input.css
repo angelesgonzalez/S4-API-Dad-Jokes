@@ -22,8 +22,7 @@
     color: #f2b600;
 }
 
-.score-container_form  
-input[type="radio"]:checked~label {
+.score-container_form input[type="radio"]:checked~label {
     color: #f2b600;
 }
 
