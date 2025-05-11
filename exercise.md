@@ -1,151 +1,170 @@
-En las entregas anteriores, los datos que hemos utilizado en nuestras webs los hemos añadido nosotros directamente en el programa (hardcoded), pero esto no es habitual.
+# Joke Web App Project – TypeScript & API Integration
 
-Como en la mayoría de webs reales, consumiremos los datos de una API en este ejercicio. Por suerte, no tendremos que implementar una API para guardar los datos en una base de datos y poder consumirlos mediante una serie de llamadas. En su lugar, usaremos una API ya creada que nos permitirá obtener el listado de naves fácilmente.
+## Project Context
 
-Los dos temas más importantes que pondrás en práctica en este proyecto son TypeScript y la obtención de datos mediante llamadas a una API Rest en un servidor.
+In previous submissions, we added the data directly into our programs (hardcoded), but this is not common practice.
 
-Una empresa de coaching está llevando a cabo un experimento en empresas de Barcelona, en el cual está midiendo el impacto del humor y la diversión en la productividad.
+As in most real-world websites, we’ll consume data from an API in this exercise. Fortunately, we won’t have to implement an API ourselves to store and retrieve data — we’ll use an existing API that allows us to easily fetch a list of jokes.
 
-Nos han pedido una aplicación web que muestre chistes a los trabajadores antes de empezar la jornada laboral.
+The two most important topics you’ll practice in this project are:
 
-Serás el/la encargado/a de llevar a cabo la base del proyecto para hacer una demo en dos semanas con el/la cliente/a y comenzar las pruebas con usuarios/as reales.
+- **TypeScript**
+- **Retrieving data via REST API calls**
 
-Información de la API a consumir
+---
 
-Crearemos una web de chistes, consumiendo datos de una API gratuita que no requiere clave. Verás que es muy divertido e interesante poder obtener datos de una API —¡imagina la cantidad de webs que puedes crear!
+## Real-World Context
 
-En el ámbito profesional, cuando trabajes en un proyecto, la empresa normalmente tiene un back end con documentación para poder obtener los datos. A menudo, una web o app no solo tiene una fuente de datos; también es común utilizar APIs de terceros. Resumiendo: saber consumir datos de una API es una de las habilidades más importantes de un/a programador/a front end.
+A coaching company is conducting an experiment in companies around Barcelona to measure the impact of humor and fun on productivity.
 
-⸻
+They’ve requested a web application that displays jokes to employees before starting their workday.
 
-Importante
+You will be in charge of building the base of the project to present a demo to the client in two weeks and begin testing with real users.
 
-En cualquier proyecto profesional, consumirás datos de una API, por lo tanto debes entender bien y a fondo cómo realizar llamadas a APIs y el asincronismo de JavaScript.
+---
 
-A continuación se muestran enlaces e información que pueden ser de utilidad para implementar las llamadas a la API en tu web:
+## API Information
 
-La documentación de la API a consumir es la siguiente:
+We will create a **joke website** that consumes data from a free API that does not require a key. It’s fun and interesting to get data from an API — just imagine the kinds of sites you could build!
 
--> Calling the API
+In a professional setting, projects usually have a backend with documentation to help you fetch the data. Often, a website or app uses multiple data sources and third-party APIs.
 
-Nota: Las APIs las crearán programadores back end, dejando siempre todo documentado para que los/las programadores/as front end u otros/as programadores/as back end de otras empresas puedan consumir los datos.
+> 💡 Knowing how to consume data from an API is one of the most essential skills for any front-end developer.
 
-Llamada para obtener un chiste:
+---
 
--> Random dad joke
+## ⚠️ Important
 
-Header para obtener los datos en el formato que nos interesa:
+In any professional project, you’ll consume data from an API. Therefore, it’s crucial to understand how to make API calls and how asynchronous JavaScript works.
 
+Useful links and documentation:
+
+### API Call
+
+**→ Random dad joke**
+
+#### Required header
+
+```http
 'Accept': 'application/json'
+```
 
-Ponemos este header en la llamada a la API para que el servidor sepa en qué formato queremos los datos, en nuestro caso en JSON.
+We include this header so the server knows we want the response in JSON format.
 
-Simplificando, diremos que la URL de la API que introducimos en este proyecto es de donde consumiremos los datos, y el header indica cómo queremos esos datos.
+- The **URL** is where we request the data from.
+- The **header** tells the server what format to return the data in.
 
-⸻
+---
 
-Notas
+## 📝 Notes from the Front-End Lead
 
-A continuación tienes las indicaciones del responsable de front end:
- • Es obligatorio implementar todos los bucles y lógica con ES6 (usando map, reduce, filter y sort para manipular arrays). En ningún caso podrás usar el bucle for.
- • Tendrás que implementar el proyecto con TypeScript (se pide en casi todas las entrevistas).
- • Si tienes dificultades para crear desde cero un proyecto TypeScript, aquí tienes los pasos:
--> Pasos para preparar un proyecto TypeScript
+- All loops and logic must be implemented using **ES6** (`map`, `reduce`, `filter`, `sort`).  
+  ❌ Do **not** use `for` loops.
+- The project **must** be implemented in **TypeScript**.
+- If you're unsure how to start a TypeScript project from scratch:
+  **→ Steps to prepare a TypeScript project**
 
-⸻
+---
 
-Nivel 1
+## Level 1
 
-Ejercicio 1
+### Exercise 1
 
-En este primer ejercicio crearemos la pantalla principal que mostrará chistes al/a la usuario/a.
+Create the **main screen** that shows jokes to the user.
 
-El funcionamiento debe ser el siguiente:
- • Al iniciar se mostrará el primer chiste en pantalla y el botón de siguiente chiste.
- • Al pulsar el botón de “Siguiente chiste” se hará fetch a la API de chistes y se mostrará por consola y por pantalla el chiste.
+#### Behavior
 
-Nota: En este ejercicio no es necesario maquetar la web, primero haremos que funcione para después aplicar los estilos.
+- On load, display the first joke and a "Next Joke" button.
+- On clicking "Next Joke", fetch a joke from the API and display it in the console and on screen.
 
-⸻
+> 💡 You don’t need to design the page yet — just make it work first.
 
-Ayuda
+---
 
-Tip 1: usa promises o async/await para esperar la respuesta de la API.
-Tip 2: antes de usar una API en el código, es recomendable probarla con Postman. Además de garantizar que funciona, verás el objeto que devuelve y sabrás cómo usarlo.
+### 🛠️ Help
 
-⸻
+**Tip 1**: Use Promises or `async/await` to wait for the API response.  
+**Tip 2**: Before coding, test the API in **Postman**. You’ll confirm it works and understand the response structure.
 
-Ejercicio 2
+---
 
-Nuestra web ya obtiene respuesta del servidor y los muestra por consola y pantalla.
+### Exercise 2
 
-Realiza una primera maquetación, colocando cada elemento en su sitio. No te preocupes por los detalles, modificaremos la maquetación más adelante.
+The app now fetches jokes and displays them. Time to create the layout.
 
-Aquí tienes una propuesta de colocación de los elementos:
+- Place each element in position (don’t worry about details).
+- Here's a proposed layout:  
+  *(image not included in the original)*
 
-(imagen no incluida en el texto original)
+---
 
-⸻
+### Exercise 3
 
-Ejercicio 3
+The client needs to **track usage** of the web for their study.
 
-La empresa que encarga el proyecto necesita hacer un seguimiento del uso de esta web para su estudio.
+You must create an array `reportJokes` to store all relevant information.
 
-Para ello, es necesario conocer el nivel de aceptación de los chistes, un sistema de seguimiento para saber cuándo los/as trabajadores/as están de mejor humor, y cuántos chistes se consumen de media.
+Each object must include:
 
-¿Cómo se traduce esta petición en nuestro código?
-
-Necesitarás generar un array llamado reportJokes, en el cual iremos guardando toda la información relativa al chiste que nos pide el/la cliente/a.
-
-Los tres campos que debe tener cada objeto del array son:
+```ts
 {
   joke: "...",
   score: 1,
-  date: ...
+  date: "ISO 8601 string"
 }
+```
 
- • La fecha en la que se hizo la valoración debe guardarse en formato ISO.
- • El campo score tiene un rango del 1 al 3, siendo 1 la peor puntuación. Deberás implementar 3 botones para cada puntuación.
- • La votación del chiste por parte del/la usuario/a es opcional (se puede pasar al siguiente chiste sin votar).
- • Una vez el/la usuario/a realiza la votación, puede cambiar su puntuación antes de pasar al siguiente chiste.
- • Deberás ir rellenando el array reportJokes con los datos obtenidos.
+#### Requirements
 
-Cada vez que actualices este array, deberás mostrar por consola su contenido.
+- Date must be stored in **ISO format**
+- Score range: 1–3 (1 = lowest). Create 3 buttons for scoring.
+- Rating is **optional** — user can skip to the next joke without rating.
+- User can **change** their rating before clicking “Next Joke”.
+- Push data into the `reportJokes` array and log it in the console on update.
 
-Nivel 2
+---
 
-Ejercicio 4
+## Level 2
 
-¡BIEN HECHO! Ya tienes una web de chistes operativa. Ahora que la web está pensada para mostrar chistes a primera hora de la mañana para empezar bien el día, añadiremos información meteorológica, ya que les puede ser de utilidad.
+### Exercise 4
 
-Consume una API de información meteorológica y muéstrala en pantalla al inicio de la aplicación.
+🎉 Great job! Now let’s enhance it further.
 
-Ejercicio 5
+The app is intended to be used in the morning, so let’s show the **weather** too.
 
-El/la cliente/a nos ha comunicado en las primeras pruebas que los/as usuarios/as se aburren si siempre se muestra el mismo tipo de chistes.
+- Fetch and display weather info when the app loads using a weather API.
 
-Tienes que buscar otra API (o APIs) de chistes y utilizarla para alternar chistes de diferentes fuentes (ya sea alternando uno de cada o de manera aleatoria).
+---
 
-Ayuda:
-¡Los chistes de Chuck Norris nunca fallan! 😉
+### Exercise 5
 
-Nivel 3
+🔁 The client reports that users get bored seeing the same type of jokes.
 
-Ejercicio 6
+- Find another joke API and alternate between them (either one-by-one or randomly).
 
-Maqueta el sitio web según esta pantalla o cualquier otra que te convenga. También es una oportunidad para practicar la…
+> 💡 **Hint**: Chuck Norris jokes never fail 😉
 
-(el texto se corta aquí)
+---
 
-Nivel 3
+## Level 3
 
-- Ejercicio 6
-Maqueta el sitio web según esta pantalla o cualquier otra que te convenga. También es una oportunidad para practicar la maquetación con Flexbox o CSS Grid, añadir tipografía, colores, espaciado, etc.
+### Exercise 6
 
-- Ejercicio 7
-¡Bonus! Si has llegado hasta aquí, enhorabuena. Si te queda tiempo, aquí tienes ideas que puedes implementar si te apetece:
- • Mostrar los últimos 5 chistes votados en una sección lateral o inferior.
- • Hacer scroll automático cuando se cargue un nuevo chiste.
- • Crear un gráfico que muestre la evolución de las puntuaciones.
- • Añadir localStorage para guardar el historial de chistes puntuados, incluso si el usuario recarga la página.
- • Añadir animaciones o transiciones al mostrar un nuevo chiste.
+Style the website using this screen layout or one you design. This is your chance to:
+
+- Practice **Flexbox** or **CSS Grid**
+- Apply fonts, colors, spacing, etc.
+
+---
+
+### Exercise 7 (Bonus)
+
+If you’ve made it this far — congratulations!
+
+Here are some **bonus ideas** if you have extra time:
+
+- Show the **last 5 rated jokes** in a sidebar or footer
+- **Auto-scroll** to the new joke when it's loaded
+- Create a **chart** to visualize joke score evolution
+- Use **localStorage** to keep a joke history even after a page refresh
+- Add **animations** or **transitions** when showing a new joke
