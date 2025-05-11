@@ -1,4 +1,4 @@
-# Sprint-4 - ITACADEMY - Joke Web App Project – TypeScript & API Integration - Level 3
+# Sprint-4 - ITACADEMY – TypeScript & API Integration - Level 3
 
 A productivity web app designed to kick off the workday with laughter and useful weather insights. Built with TypeScript, Tailwind CSS, and Webpack as part of a learning project focused on real-world API consumption and clean code architecture.
 
