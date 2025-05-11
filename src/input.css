@@ -19,11 +19,11 @@
 
 .score-container_form label:hover,
 .score-container_form label:hover~label {
-    color: #f2b600;
+    color: #0891B2;
 }
 
 .score-container_form input[type="radio"]:checked~label {
-    color: #f2b600;
+    color: #0891B2;
 }
 
 .background-video {
