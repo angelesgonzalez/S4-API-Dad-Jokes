@@ -12,6 +12,8 @@ export let scoreJoke = () => {
 			if (foundJoke && foundJoke.score != score) {
 				foundJoke.score = score;
 			}
+
+			console.log("Scores updated", reportJokes);
 		});
 	});
 };

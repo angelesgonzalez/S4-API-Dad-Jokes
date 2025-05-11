@@ -24,14 +24,14 @@ export const radioButtons = document.querySelectorAll(".tab-score");
 
 export const currentJoke = document.getElementById("joke-display__text");
 
-export const clearAllInput = () => {
-	let allInputs = document.querySelectorAll("input");
-	allInputs.forEach((singleInput) => (singleInput.value = ""));
-};
+
+
+export const cleanScoring = () => radioButtons.forEach((radio) => {
+	(radio as HTMLInputElement).checked = false;
+});
 
 export let showWeather = async () => {
 	const weather = await fetchWeatherData();
-	console.log(weather);
 	updateHTML("weather__feels-like_p", `${weather.feelsLike}°`);
 	updateHTML("weather__temperature_p", `${weather.temperature}°`);
 	updateHTML("weather__rain_p", `${weather.rain}`);

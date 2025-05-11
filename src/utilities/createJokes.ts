@@ -2,6 +2,7 @@ import { Joke } from "./Joke";
 import { reportJokes } from "./reportJokes";
 import { getDadJoke } from "./apis/dadJokeApi";
 import { getWorkJoke } from "./apis/workJokeApi";
+import { cleanScoring } from "./dom";
 
 export let createJoke = async () => {
 	const randomNumber = Math.random();
@@ -13,6 +14,7 @@ export let createJoke = async () => {
 		newJoke.type = jokeType;
 		reportJokes.push(newJoke);
 		console.log(reportJokes);
+		cleanScoring();
 		return newJoke;
 	}
 };
