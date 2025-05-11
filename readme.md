@@ -27,6 +27,12 @@ This project was built to practice:
 
 ---
 
+## 🎬 Demo Preview
+
+![Demo](sprint-4-demo.gif)
+
+---
+
 ## 🔧 Tech Stack
 
 - **TypeScript**
@@ -76,7 +82,7 @@ src/
 ### Installation
 
 ```bash
-git clone <https://github.com/angelesgonzalez/S4-API-Dad-Jokes.git>
+git clone https://github.com/angelesgonzalez/S4-API-Dad-Jokes.git
 git checkout develop 
 npm install
 ```

@@ -13,8 +13,8 @@ export let createJoke = async () => {
 		const newJoke = new Joke(joke);
 		newJoke.type = jokeType;
 		reportJokes.push(newJoke);
-		console.log(reportJokes);
+		console.log("New Joke added", reportJokes);
 		cleanScoring();
 		return newJoke;
-	}
+	} 
 };
