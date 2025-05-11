@@ -1,1 +1,1 @@
-export declare let createJoke: () => Promise<string>;
+export declare let createJoke: () => Promise<any>;
