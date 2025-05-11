@@ -2,11 +2,11 @@ import { createJoke } from "./createJokes";
 import { fetchWeatherData } from "./apis/weatherApi";
 import { getRandomMeme } from "./getRandomMeme";
 
-export let updateHTML = (id: string, update: string, jokeId: number) => {
+export let updateHTML = (id: string, update: string, jokeId?: number) => {
 	const htmlElement = document.getElementById(id);
 	if (htmlElement) {
 		htmlElement.innerHTML = update;
-		htmlElement.dataset.id = jokeId.toString();
+		htmlElement.dataset.id = jokeId !== undefined ? jokeId.toString() : "";
 	}
 };
 
@@ -31,9 +31,35 @@ export const clearAllInput = () => {
 export let showWeather = async () => {
 	const weather = await fetchWeatherData();
 	console.log(weather);
+	updateHTML("weather__feels-like_p", `${weather.feelsLike}`);
+	updateHTML("weather__temperature_p", `${weather.temperature}`);
+	updateHTML("weather__rain_p", `${weather.rain}`);
+	updateHTML("weather__wind-speed_p", `${weather.windSpeed}`);
+	chooseWeatherBackground(weather.weatherCode, weather.isDay);
+};
 
-	/// sacar la data, postearla en el dom
-	// dependiendo de lo que sea, elegir un background que cambia
+let chooseWeatherBackground = (weatherCode: number, isDay: number) => {
+	const body = document.getElementById("body");
+	if (!body) return;
+
+
+	const existingVideo = document.getElementById("bg-video");
+	if (existingVideo) existingVideo.remove();
+
+
+	const videoName = `${isDay ? "day" : "night"}-${weatherCode}`;
+	console.log(videoName);
+	const videoUrl = `/backgrounds/${videoName}.webm`;
+
+	body.insertAdjacentHTML(
+		"beforeend",
+		`
+		<video autoplay muted loop id="bg-video" class="background-video">
+			<source src="${videoUrl}" type="video/webm">
+			Your browser does not support the video tag.
+		</video>
+	`
+	);
 };
 
 export let showRandomMeme = () => {

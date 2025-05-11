@@ -9,13 +9,13 @@
 
 </head>
 
-<body class="h-screen flex items-center justify-center">
+<body class="h-screen flex items-center justify-center" id="body">
 
     <div class="mx-auto p-9">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-96">
 
             <!-- Joke Container -->
-            <div
+            <section
                 class="md:col-span-2 md:row-span-2 bg-lime-300 rounded-lg p-5 flex flex-col items-center justify-center group">
                 <p class="text-2xl font-medium" id="joke-display__text">
                 </p>
@@ -41,29 +41,45 @@
 
 
 
-            </div>
+            </section>
 
 
             <!-- Meme Container -->
-            <div class="md:col-span-2 md:row-span-2 bg-purple-200 rounded-lg p-3 h-full">
+            <section class="md:col-span-2 md:row-span-2 bg-purple-200 rounded-lg p-3 h-full">
                 <p class="text-purple-900 font-medium mb-2">Meme of the day</p>
                 <img id="memeOftheDay" src="/src/assets/memes/meme-10.gif" class="rounded-lg w-full">
 
-            </div>
+            </section>
 
             <!-- Weather container -->
 
-            <div class="md:col-span-3 md:row-span-1 bg-purple-200 rounded-lg p-3">
+            <section class="md:col-span-3 md:row-span-1 bg-purple-200 rounded-lg p-3">
                 <p class="text-purple-900 font-medium">Today's weather</p>
-            </div>
+                <article>
+                    <h3>Feels like</h3>
+                    <p id="weather__feels-like_p"></p>
+                </article>
+                <article>
+                    <h3>Temperature</h3>
+                    <p id="weather__temperature_p"></p>
+                </article>
+                <article>
+                    <h3>Rain</h3>
+                    <p id="weather__rain_p"></p>
+                </article>
+                <article>
+                    <h3>Wind Speed</h3>
+                    <p id="weather__wind-speed_p"></p>
+                </article>
+            </section>
 
             <!-- Next Joke container -->
 
-            <div class="md:col-span-1 md:row-span-1 bg-lime-300 rounded-lg p-3 flex items-center justify-center ">
+            <section class="md:col-span-1 md:row-span-1 bg-lime-300 rounded-lg p-3 flex items-center justify-center ">
                 <button class="bg-lime-600 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
                     id="joke-display__button">Next
                     Joke</button>
-            </div>
+            </section>
         </div>
 
 
