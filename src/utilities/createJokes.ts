@@ -14,7 +14,6 @@ export let createJoke = async () => {
 	} else {
 		jokeText = await getWorkJoke();
 		type = "Work Joke";
-		console.log(jokeText);
 	}
 
 	const newJoke = jokeFactory(jokeText, type);

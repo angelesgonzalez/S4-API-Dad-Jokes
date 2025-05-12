@@ -25,10 +25,6 @@ export async function getDadJoke() {
 		let data = await response.json();
 		return data.joke;
 	} catch (error) {
-		if (error instanceof ApiError) {
-			errors.push(error);
-		} else {
-			console.error(error);
-		}
+		error instanceof ApiError ? errors.push(error) : console.error(error);
 	}
 }
