@@ -5,7 +5,7 @@ export declare class Joke {
     _date: Date;
     _score: number;
     _type: string;
-    constructor(joke: string);
+    constructor(joke: string, type: string);
     get id(): number;
     get text(): string;
     get date(): string;

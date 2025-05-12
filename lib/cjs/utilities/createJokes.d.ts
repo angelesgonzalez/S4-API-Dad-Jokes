@@ -1,2 +1,1 @@
-import { Joke } from "./Joke";
-export declare let createJoke: () => Promise<Joke>;
+export declare let createJoke: () => Promise<import("./Joke").Joke>;
