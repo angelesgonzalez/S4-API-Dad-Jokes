@@ -16,6 +16,7 @@ export let showJoke = async () => {
 	if (newJoke) {
 		updateHTML("joke-display__text", `${newJoke.text}`, newJoke.id);
 	}
+	cleanScoring();
 };
 
 export const nextJokeButton = document.getElementById("joke-display__button");

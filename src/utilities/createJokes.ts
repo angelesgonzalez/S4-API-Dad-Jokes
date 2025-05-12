@@ -1,20 +1,25 @@
-import { Joke } from "./Joke";
 import { reportJokes } from "./reportJokes";
 import { getDadJoke } from "./apis/dadJokeApi";
 import { getWorkJoke } from "./apis/workJokeApi";
-import { cleanScoring } from "./dom";
+import { jokeFactory } from "./jokeFactory";
 
 export let createJoke = async () => {
 	const randomNumber = Math.random();
-	let jokeType = randomNumber < 0.5 ? "Dad Joke" : "Work Joke";
+	let jokeText: string;
+	let type: string;
 
-	let joke = randomNumber < 0.5 ? await getDadJoke() : await getWorkJoke();
-	if (joke) {
-		const newJoke = new Joke(joke);
-		newJoke.type = jokeType;
-		reportJokes.push(newJoke);
-		console.log("New Joke added", reportJokes);
-		cleanScoring();
-		return newJoke;
-	} 
+	if (randomNumber < 0.5) {
+		jokeText = await getDadJoke();
+		type = "Dad Joke";
+	} else {
+		jokeText = await getWorkJoke();
+		type = "Work Joke";
+		console.log(jokeText);
+	}
+
+	const newJoke = jokeFactory(jokeText, type);
+	reportJokes.push(newJoke);
+	console.log("New Joke added", reportJokes);
+
+	return newJoke;
 };

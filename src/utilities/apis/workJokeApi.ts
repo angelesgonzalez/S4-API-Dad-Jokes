@@ -23,6 +23,13 @@ export async function getWorkJoke() {
 		}
 
 		let data = await response.json();
+
+		if (data.type === "single") {
+			return data.joke;
+		} else if (data.type === "twopart") {
+			return `${data.setup} ... ${data.delivery}`;
+		}
+
 		return data.joke;
 	} catch (error) {
 		if (error instanceof ApiError) {
